@@ -1,0 +1,8 @@
+FROM apache/airflow:3.2.2
+
+# Copy the files pip needs to build and install your package
+COPY --chown=airflow:0 pyproject.toml README.md /opt/weather-platform/
+COPY --chown=airflow:0 src /opt/weather-platform/src/
+
+# Install your pipeline package + its runtime deps into Airflow's environment
+RUN pip install --no-cache-dir /opt/weather-platform
