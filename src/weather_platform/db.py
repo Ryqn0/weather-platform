@@ -1,4 +1,4 @@
-# src/weather-platform/db.py
+# src/weather_platform/db.py
 
 from weather_platform.config import get_connection
 

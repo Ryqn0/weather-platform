@@ -9,7 +9,6 @@ dependencies = [
     "psycopg[binary]>=3.3.4",
     "python-dotenv>=1.2.2",
     "requests>=2.34.2",
-    "standalone>=1.0.1",
 ]
 
 

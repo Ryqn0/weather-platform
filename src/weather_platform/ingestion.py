@@ -1,4 +1,4 @@
-# src/weather-platform/ingestion.py
+# src/weather_platform/ingestion.py
 
 import requests
 from datetime import datetime, timezone

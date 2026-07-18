@@ -1,4 +1,4 @@
-# src/weather-platform/config.py
+# src/weather_platform/config.py
 
 from dotenv import load_dotenv
 import psycopg

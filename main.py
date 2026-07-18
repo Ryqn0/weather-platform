@@ -1,12 +1,9 @@
 # main.py
 
-import requests
+
 import json
 from pathlib import Path
-from datetime import datetime, timezone
-import psycopg
 from dotenv import load_dotenv
-import os
 
 from weather_platform.ingestion import fetch_many
 from weather_platform.db import load_records
