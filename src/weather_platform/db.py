@@ -1,6 +1,9 @@
 # src/weather_platform/db.py
 
 from weather_platform.config import get_connection
+import logging
+
+logger = logging.getLogger(__name__)
 
 def get_or_create_location(cur, country: str, city: str, latitude: float, longitude: float) -> int:
     """
@@ -15,16 +18,24 @@ def get_or_create_location(cur, country: str, city: str, latitude: float, longit
         location_id which is an int
     """
 
+    logger.debug("Getting info on creating or getting the location_id from the database...")
+
     cur.execute("""
             INSERT INTO locations (country, city, latitude, longitude)
             VALUES (%s, %s, %s, %s)
             ON CONFLICT (country, city) DO UPDATE SET latitude = EXCLUDED.latitude, longitude = EXCLUDED.longitude
             RETURNING location_id;
                 """, [country, city, latitude, longitude])
+
+    location_id = cur.fetchone()[0]
+
+    logger.debug("The result of the SQL query : %s", location_id)
     
     #  print(cur.fetchone()[0])
+
+    logger.debug("get_or_create_location helper function finished!")
     
-    return cur.fetchone()[0]
+    return location_id
 
 
 def load_records(records: list[dict]):
@@ -36,7 +47,13 @@ def load_records(records: list[dict]):
 
             with conn.cursor() as cur:
 
+                logger.info("Starting to load the records into the database...")
+
+                logger.debug("List of records : %s", records)
+
                 for record in records:
+
+                    logger.debug("Inserting record : %s into the database...", record)
 
                     location_id = get_or_create_location(cur, record["country"], record["city"], record["latitude"], record["longitude"])
                     # print(location_id)
@@ -45,3 +62,7 @@ def load_records(records: list[dict]):
                         VALUES (%s, %s, %s, %s, %s, %s)
                         ON CONFLICT (location_id, observed_at) DO NOTHING;
                             """, [location_id, record["observed_at"], record["ingested_at"], record["temperature_2m"], record["relative_humidity_2m"], record["wind_speed_10m"]])
+
+                    logger.debug("Finished inserting record : %s into the database!", record)
+
+                logger.info("Loaded %s records into the database", len(records))
