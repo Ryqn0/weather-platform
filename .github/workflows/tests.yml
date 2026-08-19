@@ -1,3 +1,5 @@
+# .github/workflows/tests.yml
+
 name: Tests
 
 on: [push, pull_request]
@@ -17,3 +19,4 @@ jobs:
 
       - name: Running tests
         run: uv run pytest -v
+
