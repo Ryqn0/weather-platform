@@ -1,0 +1,4 @@
+packages:
+  - name: dbt_utils
+    tarball: https://codeload.github.com/dbt-labs/dbt-utils/tar.gz/0.9.6
+sha1_hash: 48ab94542b47cd29a15ba80f6dab6309a51f60f2

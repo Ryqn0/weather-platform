@@ -1,0 +1,4 @@
+packages:
+
+  - tarball: https://codeload.github.com/dbt-labs/dbt-utils/tar.gz/0.9.6
+    name: 'dbt_utils'

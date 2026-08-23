@@ -1,0 +1,79 @@
+# weather_dbt/models/marts/_models.yml
+
+version: 2
+models:
+
+  - name: daily_city_weather
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - country
+              - city
+              - weather_date
+
+    columns:
+
+      - name: country
+        tests:
+          - not_null
+
+      - name: city
+        tests:
+          - not_null
+
+      - name: weather_date
+        tests:
+          - not_null
+
+      - name: avg_temperature_2m
+        tests:
+          - not_null
+
+      - name: min_temperature_2m
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: -90
+
+      - name: max_temperature_2m
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                max_value: 60
+
+      - name: avg_relative_humidity_2m
+        tests:
+          - not_null
+
+      - name: min_relative_humidity_2m
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+
+      - name: max_relative_humidity_2m
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                max_value: 100
+
+      - name: avg_wind_speed_10m
+        tests:
+          - not_null
+
+      - name: min_wind_speed_10m
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+
+      - name: max_wind_speed_10m
+        tests:
+          - not_null
