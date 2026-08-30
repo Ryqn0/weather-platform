@@ -1,0 +1,334 @@
+[0m18:15:06.328866 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719f24b4c830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719f26d03610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719f237cf890>]}
+
+
+============================== 18:15:06.349558 | 4c7e84d9-c427-4b6e-ad3a-011882ae8ff1 ==============================
+[0m18:15:06.349558 [info ] [MainThread]: Running with dbt=1.12.2
+[0m18:15:06.349921 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'log_format': 'default', 'invocation_command': 'dbt init weather_dbt', 'static_parser': 'True', 'use_colors': 'True', 'fail_fast': 'False', 'empty': 'None', 'version_check': 'True', 'target_path': 'None', 'indirect_selection': 'eager', 'printer_width': '80', 'quiet': 'False', 'introspect': 'True', 'debug': 'False', 'log_path': 'logs', 'send_anonymous_usage_stats': 'True', 'maximum_seed_size_mib': '1', 'hints_enabled': 'True', 'partial_parse': 'True', 'profiles_dir': '/home/dungr/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'no_print': 'None', 'write_json': 'True', 'cache_selected_only': 'False', 'use_experimental_parser': 'False'}
+[0m18:15:06.380568 [info ] [MainThread]: Creating dbt configuration folder at /home/dungr/.dbt
+[0m18:15:06.381527 [debug] [MainThread]: Starter project path: /home/dungr/projects/weather-platform/.venv/lib/python3.14/site-packages/dbt/include/starter_project
+[0m18:15:06.383044 [info ] [MainThread]: Setting up your profile.
+[0m18:17:07.568626 [info ] [MainThread]: Profile weather_dbt written to /home/dungr/.dbt/profiles.yml using target's profile_template.yml and your supplied values.
+[0m18:17:07.571538 [info ] [MainThread]: Running dbt debug to validate the project...
+[0m18:17:07.571837 [info ] [MainThread]: dbt version: 1.12.2
+[0m18:17:07.571986 [info ] [MainThread]: python version: 3.14.4
+[0m18:17:07.572126 [info ] [MainThread]: python path: /home/dungr/projects/weather-platform/.venv/bin/python3
+[0m18:17:07.572268 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43
+[0m18:17:07.585049 [info ] [MainThread]: Using profiles dir at /home/dungr/.dbt
+[0m18:17:07.585318 [info ] [MainThread]: Using profiles.yml file at /home/dungr/.dbt/profiles.yml
+[0m18:17:07.585471 [info ] [MainThread]: Using dbt_project.yml file at /home/dungr/projects/weather-platform/weather_dbt/dbt_project.yml
+[0m18:17:07.585799 [info ] [MainThread]: adapter type: postgres
+[0m18:17:07.585961 [info ] [MainThread]: adapter version: 1.11.0
+[0m18:17:07.638112 [info ] [MainThread]: Configuration:
+[0m18:17:07.638374 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m18:17:07.638531 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m18:17:07.638676 [info ] [MainThread]: Required dependencies:
+[0m18:17:07.638858 [debug] [MainThread]: Executing "git --help"
+[0m18:17:07.694265 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:17:07.694562 [debug] [MainThread]: STDERR: "b''"
+[0m18:17:07.694701 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:17:07.694865 [info ] [MainThread]: Connection:
+[0m18:17:07.695024 [info ] [MainThread]:   host: localhost
+[0m18:17:07.695166 [info ] [MainThread]:   port: 5432
+[0m18:17:07.695352 [info ] [MainThread]:   user: weather_app
+[0m18:17:07.695480 [info ] [MainThread]:   database: weather
+[0m18:17:07.695615 [info ] [MainThread]:   schema: public
+[0m18:17:07.695732 [info ] [MainThread]:   connect_timeout: 10
+[0m18:17:07.695832 [info ] [MainThread]:   role: None
+[0m18:17:07.695927 [info ] [MainThread]:   search_path: None
+[0m18:17:07.696041 [info ] [MainThread]:   keepalives_idle: 0
+[0m18:17:07.696153 [info ] [MainThread]:   sslmode: None
+[0m18:17:07.696266 [info ] [MainThread]:   sslcert: None
+[0m18:17:07.696377 [info ] [MainThread]:   sslkey: None
+[0m18:17:07.696492 [info ] [MainThread]:   sslrootcert: None
+[0m18:17:07.696606 [info ] [MainThread]:   application_name: dbt
+[0m18:17:07.696720 [info ] [MainThread]:   autocommit: False
+[0m18:17:07.696832 [info ] [MainThread]:   retries: 1
+[0m18:17:07.697062 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m18:17:07.723961 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m18:17:07.748845 [debug] [MainThread]: Using postgres connection "debug"
+[0m18:17:07.749028 [debug] [MainThread]: On debug: select 1 as id
+[0m18:17:07.749143 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:17:07.751991 [debug] [MainThread]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+[0m18:17:07.752464 [debug] [MainThread]: Postgres adapter: Error running SQL: select 1 as id
+[0m18:17:07.752603 [debug] [MainThread]: Postgres adapter: Rolling back transaction.
+[0m18:17:07.752727 [debug] [MainThread]: On debug: No close available on handle
+[0m18:17:07.752850 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m18:17:07.753004 [info ] [MainThread]: [31m1 check failed:[0m
+[0m18:17:07.753148 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+  	Is the server running on that host and accepting TCP/IP connections?
+  
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m18:17:07.753322 [info ] [MainThread]: Your new dbt project "weather_dbt" was created!
+Initialized new project in /home/dungr/projects/weather-platform/weather_dbt/weather_dbt
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:17:07.753484 [info ] [MainThread]: [31mYour profile may need adjustments. You can find the logs of `dbt debug` above[0m
+[0m18:17:07.754982 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 121.466576, "process_in_blocks": "38152", "process_kernel_time": 0.171487, "process_mem_max_rss": "160584", "process_out_blocks": "40704", "process_user_time": 1.806603}
+[0m18:17:07.755220 [debug] [MainThread]: Command `dbt init` succeeded at 18:17:07.755173 after 121.47 seconds
+[0m18:17:07.755367 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m18:17:07.755506 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719f233f9810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719f22e82d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x719f230ab020>]}
+[0m18:17:07.755673 [debug] [MainThread]: Flushing usage events
+[0m18:17:08.168911 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:35:40.224519 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75940e04be00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75940fea4e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75940ca0b9d0>]}
+
+
+============================== 18:35:40.226174 | 3157777a-d5b9-46e7-97c8-1c0ff9c59178 ==============================
+[0m18:35:40.226174 [info ] [MainThread]: Running with dbt=1.12.2
+[0m18:35:40.226474 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'hints_enabled': 'True', 'debug': 'False', 'log_cache_events': 'False', 'no_print': 'None', 'indirect_selection': 'eager', 'profiles_dir': '/home/dungr/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'target_path': 'None', 'printer_width': '80', 'log_format': 'default', 'version_check': 'True', 'maximum_seed_size_mib': '1', 'partial_parse': 'True', 'log_path': 'logs', 'use_experimental_parser': 'False', 'use_colors': 'True', 'static_parser': 'True', 'warn_error': 'None', 'cache_selected_only': 'False', 'empty': 'None', 'quiet': 'False', 'invocation_command': 'dbt init weather_dbt', 'send_anonymous_usage_stats': 'True', 'introspect': 'True'}
+[0m18:35:40.231010 [info ] [MainThread]: A project called weather_dbt already exists here.
+[0m18:35:40.231534 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.048992377, "process_in_blocks": "0", "process_kernel_time": 0.072191, "process_mem_max_rss": "124708", "process_out_blocks": "16", "process_user_time": 0.697849}
+[0m18:35:40.231763 [debug] [MainThread]: Command `dbt init` succeeded at 18:35:40.231716 after 0.05 seconds
+[0m18:35:40.231907 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75940c9c09d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75940c8a0dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75940c8717b0>]}
+[0m18:35:40.232053 [debug] [MainThread]: Flushing usage events
+[0m18:35:40.650358 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:36:01.644392 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x792cb3953e00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x792cb57accd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x792cb230f9d0>]}
+
+
+============================== 18:36:01.646107 | 5bcea290-b323-49c8-9413-f8ade623780e ==============================
+[0m18:36:01.646107 [info ] [MainThread]: Running with dbt=1.12.2
+[0m18:36:01.646384 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'empty': 'None', 'no_print': 'None', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'debug': 'False', 'write_json': 'True', 'log_path': 'logs', 'quiet': 'False', 'use_colors': 'True', 'maximum_seed_size_mib': '1', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt debug', 'profiles_dir': '/home/dungr/.dbt', 'version_check': 'True', 'indirect_selection': 'eager', 'fail_fast': 'False', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'static_parser': 'True', 'printer_width': '80', 'warn_error': 'None', 'hints_enabled': 'True'}
+[0m18:36:01.651037 [info ] [MainThread]: dbt version: 1.12.2
+[0m18:36:01.651244 [info ] [MainThread]: python version: 3.14.4
+[0m18:36:01.651389 [info ] [MainThread]: python path: /home/dungr/projects/weather-platform/.venv/bin/python3
+[0m18:36:01.651519 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43
+[0m18:36:01.675670 [info ] [MainThread]: Using profiles dir at /home/dungr/.dbt
+[0m18:36:01.675962 [info ] [MainThread]: Using profiles.yml file at /home/dungr/.dbt/profiles.yml
+[0m18:36:01.676130 [info ] [MainThread]: Using dbt_project.yml file at /home/dungr/projects/weather-platform/dbt_project.yml
+[0m18:36:01.676352 [info ] [MainThread]: adapter type: postgres
+[0m18:36:01.676491 [info ] [MainThread]: adapter version: 1.11.0
+[0m18:36:01.676627 [info ] [MainThread]: Configuration:
+[0m18:36:01.676782 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m18:36:01.676904 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m18:36:01.677021 [info ] [MainThread]: Required dependencies:
+[0m18:36:01.677153 [debug] [MainThread]: Executing "git --help"
+[0m18:36:01.678312 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:36:01.678515 [debug] [MainThread]: STDERR: "b''"
+[0m18:36:01.678618 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:36:01.678748 [info ] [MainThread]: Connection:
+[0m18:36:01.678875 [info ] [MainThread]:   host: localhost
+[0m18:36:01.678994 [info ] [MainThread]:   port: 5432
+[0m18:36:01.679105 [info ] [MainThread]:   user: weather_app
+[0m18:36:01.679215 [info ] [MainThread]:   database: weather
+[0m18:36:01.679324 [info ] [MainThread]:   schema: public
+[0m18:36:01.679438 [info ] [MainThread]:   connect_timeout: 10
+[0m18:36:01.679552 [info ] [MainThread]:   role: None
+[0m18:36:01.679662 [info ] [MainThread]:   search_path: None
+[0m18:36:01.679771 [info ] [MainThread]:   keepalives_idle: 0
+[0m18:36:01.679879 [info ] [MainThread]:   sslmode: None
+[0m18:36:01.680029 [info ] [MainThread]:   sslcert: None
+[0m18:36:01.680142 [info ] [MainThread]:   sslkey: None
+[0m18:36:01.680254 [info ] [MainThread]:   sslrootcert: None
+[0m18:36:01.680363 [info ] [MainThread]:   application_name: dbt
+[0m18:36:01.680471 [info ] [MainThread]:   autocommit: False
+[0m18:36:01.680580 [info ] [MainThread]:   retries: 1
+[0m18:36:01.680762 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m18:36:01.704591 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m18:36:01.729292 [debug] [MainThread]: Using postgres connection "debug"
+[0m18:36:01.729496 [debug] [MainThread]: On debug: select 1 as id
+[0m18:36:01.729609 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:36:01.736167 [debug] [MainThread]: SQL status: SELECT 1 in 0.007 seconds
+[0m18:36:01.736809 [debug] [MainThread]: On debug: Close
+[0m18:36:01.737019 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m18:36:01.737198 [info ] [MainThread]: [31m1 check failed:[0m
+[0m18:36:01.737427 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/dungr/projects/weather-platform/dbt_project.yml> not found
+
+[0m18:36:01.737977 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.13607919, "process_in_blocks": "0", "process_kernel_time": 0.116189, "process_mem_max_rss": "139316", "process_out_blocks": "16", "process_user_time": 0.717169}
+[0m18:36:01.738198 [debug] [MainThread]: Command `dbt debug` failed at 18:36:01.738144 after 0.14 seconds
+[0m18:36:01.738340 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m18:36:01.738476 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x792cb2044e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x792cb21f96d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x792cb0bec380>]}
+[0m18:36:01.738644 [debug] [MainThread]: Flushing usage events
+[0m18:36:02.121570 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:36:10.161558 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x767884343e00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76788626ce10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x767882cff9d0>]}
+
+
+============================== 18:36:10.163143 | 9a3a2a0d-eaf1-4f08-83f1-f85d6364f2b3 ==============================
+[0m18:36:10.163143 [info ] [MainThread]: Running with dbt=1.12.2
+[0m18:36:10.163450 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'fail_fast': 'False', 'log_format': 'default', 'no_print': 'None', 'static_parser': 'True', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'profiles_dir': '/home/dungr/.dbt', 'quiet': 'False', 'target_path': 'None', 'invocation_command': 'dbt debug', 'log_path': 'logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'use_colors': 'True', 'hints_enabled': 'True', 'introspect': 'True', 'indirect_selection': 'eager', 'write_json': 'True', 'maximum_seed_size_mib': '1', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'version_check': 'True', 'log_cache_events': 'False', 'partial_parse': 'True'}
+[0m18:36:10.168212 [info ] [MainThread]: dbt version: 1.12.2
+[0m18:36:10.168425 [info ] [MainThread]: python version: 3.14.4
+[0m18:36:10.168564 [info ] [MainThread]: python path: /home/dungr/projects/weather-platform/.venv/bin/python3
+[0m18:36:10.168777 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43
+[0m18:36:10.192796 [info ] [MainThread]: Using profiles dir at /home/dungr/.dbt
+[0m18:36:10.193068 [info ] [MainThread]: Using profiles.yml file at /home/dungr/.dbt/profiles.yml
+[0m18:36:10.193224 [info ] [MainThread]: Using dbt_project.yml file at /home/dungr/projects/weather-platform/dbt_project.yml
+[0m18:36:10.193467 [info ] [MainThread]: adapter type: postgres
+[0m18:36:10.193625 [info ] [MainThread]: adapter version: 1.11.0
+[0m18:36:10.193767 [info ] [MainThread]: Configuration:
+[0m18:36:10.193886 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m18:36:10.194001 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m18:36:10.194115 [info ] [MainThread]: Required dependencies:
+[0m18:36:10.194245 [debug] [MainThread]: Executing "git --help"
+[0m18:36:10.195532 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:36:10.195746 [debug] [MainThread]: STDERR: "b''"
+[0m18:36:10.195862 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:36:10.196039 [info ] [MainThread]: Connection:
+[0m18:36:10.196171 [info ] [MainThread]:   host: localhost
+[0m18:36:10.196291 [info ] [MainThread]:   port: 5432
+[0m18:36:10.196403 [info ] [MainThread]:   user: weather_app
+[0m18:36:10.196514 [info ] [MainThread]:   database: weather
+[0m18:36:10.196626 [info ] [MainThread]:   schema: public
+[0m18:36:10.196739 [info ] [MainThread]:   connect_timeout: 10
+[0m18:36:10.196849 [info ] [MainThread]:   role: None
+[0m18:36:10.196957 [info ] [MainThread]:   search_path: None
+[0m18:36:10.197068 [info ] [MainThread]:   keepalives_idle: 0
+[0m18:36:10.197183 [info ] [MainThread]:   sslmode: None
+[0m18:36:10.197292 [info ] [MainThread]:   sslcert: None
+[0m18:36:10.197402 [info ] [MainThread]:   sslkey: None
+[0m18:36:10.197512 [info ] [MainThread]:   sslrootcert: None
+[0m18:36:10.197623 [info ] [MainThread]:   application_name: dbt
+[0m18:36:10.197742 [info ] [MainThread]:   autocommit: False
+[0m18:36:10.197855 [info ] [MainThread]:   retries: 1
+[0m18:36:10.198050 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m18:36:10.221871 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m18:36:10.245418 [debug] [MainThread]: Using postgres connection "debug"
+[0m18:36:10.245628 [debug] [MainThread]: On debug: select 1 as id
+[0m18:36:10.245746 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:36:10.252477 [debug] [MainThread]: SQL status: SELECT 1 in 0.007 seconds
+[0m18:36:10.252985 [debug] [MainThread]: On debug: Close
+[0m18:36:10.253173 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m18:36:10.253346 [info ] [MainThread]: [31m1 check failed:[0m
+[0m18:36:10.253484 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/dungr/projects/weather-platform/dbt_project.yml> not found
+
+[0m18:36:10.253982 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.13351896, "process_in_blocks": "0", "process_kernel_time": 0.076192, "process_mem_max_rss": "139128", "process_out_blocks": "24", "process_user_time": 0.741878}
+[0m18:36:10.254229 [debug] [MainThread]: Command `dbt debug` failed at 18:36:10.254166 after 0.13 seconds
+[0m18:36:10.254375 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m18:36:10.254519 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x767882a34e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x767882be96d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7678819dc380>]}
+[0m18:36:10.254686 [debug] [MainThread]: Flushing usage events
+[0m18:36:10.649189 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:27:43.938633 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e7eeb3be00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e7f0b90e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e7ed4f79d0>]}
+
+
+============================== 18:27:43.941825 | 434e70ee-fbc5-4d9f-9c3b-d2dbbd18fbdb ==============================
+[0m18:27:43.941825 [info ] [MainThread]: Running with dbt=1.12.2
+[0m18:27:43.942139 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'printer_width': '80', 'hints_enabled': 'True', 'target_path': 'None', 'static_parser': 'True', 'log_format': 'default', 'partial_parse': 'True', 'empty': 'None', 'debug': 'False', 'log_path': 'logs', 'use_colors': 'True', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'no_print': 'None', 'introspect': 'True', 'invocation_command': 'dbt debug', 'profiles_dir': '/home/dungr/.dbt', 'warn_error': 'None', 'cache_selected_only': 'False', 'maximum_seed_size_mib': '1', 'write_json': 'True'}
+[0m18:27:43.952165 [info ] [MainThread]: dbt version: 1.12.2
+[0m18:27:43.952433 [info ] [MainThread]: python version: 3.14.4
+[0m18:27:43.952587 [info ] [MainThread]: python path: /home/dungr/projects/weather-platform/.venv/bin/python3
+[0m18:27:43.952722 [info ] [MainThread]: os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.43
+[0m18:27:43.995347 [info ] [MainThread]: Using profiles dir at /home/dungr/.dbt
+[0m18:27:43.995591 [info ] [MainThread]: Using profiles.yml file at /home/dungr/.dbt/profiles.yml
+[0m18:27:43.995743 [info ] [MainThread]: Using dbt_project.yml file at /home/dungr/projects/weather-platform/dbt_project.yml
+[0m18:27:43.996137 [info ] [MainThread]: adapter type: postgres
+[0m18:27:43.996340 [info ] [MainThread]: adapter version: 1.11.0
+[0m18:27:43.996660 [info ] [MainThread]: Configuration:
+[0m18:27:43.996807 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m18:27:43.997016 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m18:27:43.997184 [info ] [MainThread]: Required dependencies:
+[0m18:27:43.997343 [debug] [MainThread]: Executing "git --help"
+[0m18:27:44.006603 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:27:44.006846 [debug] [MainThread]: STDERR: "b''"
+[0m18:27:44.006964 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:27:44.007109 [info ] [MainThread]: Connection:
+[0m18:27:44.007244 [info ] [MainThread]:   host: localhost
+[0m18:27:44.007365 [info ] [MainThread]:   port: 5432
+[0m18:27:44.007478 [info ] [MainThread]:   user: weather_app
+[0m18:27:44.007588 [info ] [MainThread]:   database: weather
+[0m18:27:44.007697 [info ] [MainThread]:   schema: public
+[0m18:27:44.007810 [info ] [MainThread]:   connect_timeout: 10
+[0m18:27:44.007926 [info ] [MainThread]:   role: None
+[0m18:27:44.008037 [info ] [MainThread]:   search_path: None
+[0m18:27:44.008146 [info ] [MainThread]:   keepalives_idle: 0
+[0m18:27:44.008265 [info ] [MainThread]:   sslmode: None
+[0m18:27:44.008425 [info ] [MainThread]:   sslcert: None
+[0m18:27:44.008548 [info ] [MainThread]:   sslkey: None
+[0m18:27:44.008656 [info ] [MainThread]:   sslrootcert: None
+[0m18:27:44.008768 [info ] [MainThread]:   application_name: dbt
+[0m18:27:44.008880 [info ] [MainThread]:   autocommit: False
+[0m18:27:44.008991 [info ] [MainThread]:   retries: 1
+[0m18:27:44.009190 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m18:27:44.037854 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m18:27:44.065213 [debug] [MainThread]: Using postgres connection "debug"
+[0m18:27:44.065428 [debug] [MainThread]: On debug: select 1 as id
+[0m18:27:44.065551 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:27:44.081841 [debug] [MainThread]: SQL status: SELECT 1 in 0.016 seconds
+[0m18:27:44.082352 [debug] [MainThread]: On debug: Close
+[0m18:27:44.082563 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m18:27:44.082744 [info ] [MainThread]: [31m1 check failed:[0m
+[0m18:27:44.082883 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/dungr/projects/weather-platform/dbt_project.yml> not found
+
+[0m18:27:44.083745 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.18894061, "process_in_blocks": "84816", "process_kernel_time": 0.138662, "process_mem_max_rss": "137348", "process_out_blocks": "24", "process_user_time": 0.831972}
+[0m18:27:44.083997 [debug] [MainThread]: Command `dbt debug` failed at 18:27:44.083947 after 0.19 seconds
+[0m18:27:44.084150 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m18:27:44.084286 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e7ed22ce90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e7ed3e16d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70e7ebdd8380>]}
+[0m18:27:44.084528 [debug] [MainThread]: Flushing usage events
+[0m18:27:44.517070 [debug] [MainThread]: An error was encountered while trying to flush usage events
+{"data":{"log_version":3,"version":"=2.0.0-preview.205"},"info":{"category":"","code":"A001","extra":{},"invocation_id":"01a02535-7c58-7e00-9ac5-ef5c5e66a611","level":"info","msg":"Running with dbt-fusion=2.0.0-preview.205","name":"MainReportVersion","pid":2116,"thread":"tokio-rt-worker","ts":"2026-08-21T16:44:17.399622Z"}}
+{"data":{"args":{"debug":"false","invocation_command":"C:\\Users\\dungr\\.local\\bin\\dbt.exe license info --json --log-format json","log_format":"json","quiet":"false","write_json":"true"}},"info":{"category":"","code":"A002","extra":{},"invocation_id":"01a02535-7c58-7e00-9ac5-ef5c5e66a611","level":"debug","msg":"running dbt-fusion with arguments {\"command\":\"license\",\"vars\":\"{}\",\"limit\":\"10\",\"debug\":false,\"log_format\":\"json\",\"quiet\":false,\"write_json\":true,\"write_catalog\":false,\"manage_state\":false}","name":"MainReportArgs","pid":2116,"thread":"tokio-rt-worker","ts":"2026-08-21T16:44:17.399959Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a02535-7c58-7e00-9ac5-ef5c5e66a611","level":"debug","msg":"No platform credentials found, skipping remote license","name":"Generic","pid":2116,"thread":"tokio-rt-worker","ts":"2026-08-21T16:44:17.427647Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a02535-7c58-7e00-9ac5-ef5c5e66a611","level":"debug","msg":"Requesting trial license from https://cloud.getdbt.com/api/private/trial-licenses/","name":"Generic","pid":2116,"thread":"main","ts":"2026-08-21T16:44:18.287128Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a02535-7c58-7e00-9ac5-ef5c5e66a611","level":"debug","msg":"Trial license retrieved","name":"Generic","pid":2116,"thread":"main","ts":"2026-08-21T16:44:21.109626Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a02535-7c58-7e00-9ac5-ef5c5e66a611","level":"debug","msg":"License loaded from trial license server","name":"Generic","pid":2116,"thread":"tokio-rt-worker","ts":"2026-08-21T16:44:21.595101Z"}}
+{"data":{"columns":[],"is_inline":true,"node_name":"license_info","output_format":"json","preview":"{\n  \"status\": \"valid\",\n  \"licensing_enabled\": true,\n  \"features\": [\n    \"compare\",\n    \"strict-static-analysis\"\n  ],\n  \"issued_at\": \"2026-08-21T16:44:21+00:00\",\n  \"expires_at\": \"2026-09-03T19:39:27+00:00\",\n  \"license_type\": \"trial\",\n  \"machine_id\": \"0f2466455d31a0d9f0d56e27390081f2195fd8e0984785b0f51ddffcd1f399ca\",\n  \"days_remaining\": 13,\n  \"trial_start_date\": \"2026-08-20T19:39:27+00:00\"\n}","unique_id":"license.info"},"info":{"category":"","code":"Q041","extra":{},"invocation_id":"01a02535-7c58-7e00-9ac5-ef5c5e66a611","level":"info","msg":"{\n  \"status\": \"valid\",\n  \"licensing_enabled\": true,\n  \"features\": [\n    \"compare\",\n    \"strict-static-analysis\"\n  ],\n  \"issued_at\": \"2026-08-21T16:44:21+00:00\",\n  \"expires_at\": \"2026-09-03T19:39:27+00:00\",\n  \"license_type\": \"trial\",\n  \"machine_id\": \"0f2466455d31a0d9f0d56e27390081f2195fd8e0984785b0f51ddffcd1f399ca\",\n  \"days_remaining\": 13,\n  \"trial_start_date\": \"2026-08-20T19:39:27+00:00\"\n}","name":"ShowNode","pid":2116,"thread":"tokio-rt-worker","ts":"2026-08-21T16:44:22.065374Z"}}
+{"data":{"completed_at":"2026-08-21T16:44:22.094083Z","elapsed":4.696528911590576,"success":true},"info":{"category":"","code":"Q039","extra":{},"invocation_id":"01a02535-7c58-7e00-9ac5-ef5c5e66a611","level":"info","msg":"\n==================== Execution Summary =====================\nFinished 'license' successfully [4.7s]","name":"CommandCompleted","pid":2116,"thread":"tokio-rt-worker","ts":"2026-08-21T16:44:22.094199Z"}}
+{"data":{"log_version":3,"version":"=2.0.0-preview.205"},"info":{"category":"","code":"A001","extra":{},"invocation_id":"01a02f77-980c-7790-8c3d-dff39fc9260f","level":"info","msg":"Running with dbt-fusion=2.0.0-preview.205","name":"MainReportVersion","pid":36812,"thread":"tokio-rt-worker","ts":"2026-08-23T16:32:42.019533Z"}}
+{"data":{"args":{"debug":"false","invocation_command":"C:\\Users\\dungr\\.local\\bin\\dbt.exe license info --json --log-format json","log_format":"json","quiet":"false","write_json":"true"}},"info":{"category":"","code":"A002","extra":{},"invocation_id":"01a02f77-980c-7790-8c3d-dff39fc9260f","level":"debug","msg":"running dbt-fusion with arguments {\"command\":\"license\",\"vars\":\"{}\",\"limit\":\"10\",\"debug\":false,\"log_format\":\"json\",\"quiet\":false,\"write_json\":true,\"write_catalog\":false,\"manage_state\":false}","name":"MainReportArgs","pid":36812,"thread":"tokio-rt-worker","ts":"2026-08-23T16:32:42.019606Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a02f77-980c-7790-8c3d-dff39fc9260f","level":"debug","msg":"No platform credentials found, skipping remote license","name":"Generic","pid":36812,"thread":"tokio-rt-worker","ts":"2026-08-23T16:32:42.054597Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a02f77-980c-7790-8c3d-dff39fc9260f","level":"debug","msg":"License from file C:\\Users\\dungr\\.dbt\\license.trial is in refresh window, attempting remote refresh","name":"Generic","pid":36812,"thread":"tokio-rt-worker","ts":"2026-08-23T16:32:44.240928Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a02f77-980c-7790-8c3d-dff39fc9260f","level":"debug","msg":"Requesting trial license from https://cloud.getdbt.com/api/private/trial-licenses/","name":"Generic","pid":36812,"thread":"main","ts":"2026-08-23T16:32:45.144666Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a02f77-980c-7790-8c3d-dff39fc9260f","level":"debug","msg":"Trial license retrieved","name":"Generic","pid":36812,"thread":"main","ts":"2026-08-23T16:32:45.532202Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a02f77-980c-7790-8c3d-dff39fc9260f","level":"debug","msg":"License loaded from trial license server","name":"Generic","pid":36812,"thread":"tokio-rt-worker","ts":"2026-08-23T16:32:46.398006Z"}}
+{"data":{"columns":[],"is_inline":true,"node_name":"license_info","output_format":"json","preview":"{\n  \"status\": \"valid\",\n  \"licensing_enabled\": true,\n  \"features\": [\n    \"compare\",\n    \"strict-static-analysis\"\n  ],\n  \"issued_at\": \"2026-08-23T16:32:45+00:00\",\n  \"expires_at\": \"2026-09-03T19:39:27+00:00\",\n  \"license_type\": \"trial\",\n  \"machine_id\": \"0f2466455d31a0d9f0d56e27390081f2195fd8e0984785b0f51ddffcd1f399ca\",\n  \"days_remaining\": 11,\n  \"trial_start_date\": \"2026-08-20T19:39:27+00:00\"\n}","unique_id":"license.info"},"info":{"category":"","code":"Q041","extra":{},"invocation_id":"01a02f77-980c-7790-8c3d-dff39fc9260f","level":"info","msg":"{\n  \"status\": \"valid\",\n  \"licensing_enabled\": true,\n  \"features\": [\n    \"compare\",\n    \"strict-static-analysis\"\n  ],\n  \"issued_at\": \"2026-08-23T16:32:45+00:00\",\n  \"expires_at\": \"2026-09-03T19:39:27+00:00\",\n  \"license_type\": \"trial\",\n  \"machine_id\": \"0f2466455d31a0d9f0d56e27390081f2195fd8e0984785b0f51ddffcd1f399ca\",\n  \"days_remaining\": 11,\n  \"trial_start_date\": \"2026-08-20T19:39:27+00:00\"\n}","name":"ShowNode","pid":36812,"thread":"tokio-rt-worker","ts":"2026-08-23T16:32:47.275285Z"}}
+{"data":{"completed_at":"2026-08-23T16:32:47.311490Z","elapsed":5.292322635650635,"success":true},"info":{"category":"","code":"Q039","extra":{},"invocation_id":"01a02f77-980c-7790-8c3d-dff39fc9260f","level":"info","msg":"\n==================== Execution Summary =====================\nFinished 'license' successfully [5.3s]","name":"CommandCompleted","pid":36812,"thread":"tokio-rt-worker","ts":"2026-08-23T16:32:47.311864Z"}}
+{"data":{"log_version":3,"version":"=2.0.0-preview.205"},"info":{"category":"","code":"A001","extra":{},"invocation_id":"01a03486-700a-7692-a714-776ec5ce2cca","level":"info","msg":"Running with dbt-fusion=2.0.0-preview.205","name":"MainReportVersion","pid":32748,"thread":"tokio-rt-worker","ts":"2026-08-24T16:07:00.880716Z"}}
+{"data":{"args":{"debug":"false","invocation_command":"C:\\Users\\dungr\\.local\\bin\\dbt.exe license info --json --log-format json","log_format":"json","quiet":"false","write_json":"true"}},"info":{"category":"","code":"A002","extra":{},"invocation_id":"01a03486-700a-7692-a714-776ec5ce2cca","level":"debug","msg":"running dbt-fusion with arguments {\"command\":\"license\",\"vars\":\"{}\",\"limit\":\"10\",\"debug\":false,\"log_format\":\"json\",\"quiet\":false,\"write_json\":true,\"write_catalog\":false,\"manage_state\":false}","name":"MainReportArgs","pid":32748,"thread":"tokio-rt-worker","ts":"2026-08-24T16:07:00.880740Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a03486-700a-7692-a714-776ec5ce2cca","level":"debug","msg":"No platform credentials found, skipping remote license","name":"Generic","pid":32748,"thread":"tokio-rt-worker","ts":"2026-08-24T16:07:00.890001Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a03486-700a-7692-a714-776ec5ce2cca","level":"debug","msg":"License from file C:\\Users\\dungr\\.dbt\\license.trial is in refresh window, attempting remote refresh","name":"Generic","pid":32748,"thread":"tokio-rt-worker","ts":"2026-08-24T16:07:01.652234Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a03486-700a-7692-a714-776ec5ce2cca","level":"debug","msg":"Requesting trial license from https://cloud.getdbt.com/api/private/trial-licenses/","name":"Generic","pid":32748,"thread":"main","ts":"2026-08-24T16:07:02.141758Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a03486-700a-7692-a714-776ec5ce2cca","level":"debug","msg":"Trial license retrieved","name":"Generic","pid":32748,"thread":"main","ts":"2026-08-24T16:07:02.421997Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a03486-700a-7692-a714-776ec5ce2cca","level":"debug","msg":"License loaded from trial license server","name":"Generic","pid":32748,"thread":"tokio-rt-worker","ts":"2026-08-24T16:07:02.880185Z"}}
+{"data":{"columns":[],"is_inline":true,"node_name":"license_info","output_format":"json","preview":"{\n  \"status\": \"valid\",\n  \"licensing_enabled\": true,\n  \"features\": [\n    \"compare\",\n    \"strict-static-analysis\"\n  ],\n  \"issued_at\": \"2026-08-24T16:07:01+00:00\",\n  \"expires_at\": \"2026-09-03T19:39:27+00:00\",\n  \"license_type\": \"trial\",\n  \"machine_id\": \"0f2466455d31a0d9f0d56e27390081f2195fd8e0984785b0f51ddffcd1f399ca\",\n  \"days_remaining\": 10,\n  \"trial_start_date\": \"2026-08-20T19:39:27+00:00\"\n}","unique_id":"license.info"},"info":{"category":"","code":"Q041","extra":{},"invocation_id":"01a03486-700a-7692-a714-776ec5ce2cca","level":"info","msg":"{\n  \"status\": \"valid\",\n  \"licensing_enabled\": true,\n  \"features\": [\n    \"compare\",\n    \"strict-static-analysis\"\n  ],\n  \"issued_at\": \"2026-08-24T16:07:01+00:00\",\n  \"expires_at\": \"2026-09-03T19:39:27+00:00\",\n  \"license_type\": \"trial\",\n  \"machine_id\": \"0f2466455d31a0d9f0d56e27390081f2195fd8e0984785b0f51ddffcd1f399ca\",\n  \"days_remaining\": 10,\n  \"trial_start_date\": \"2026-08-20T19:39:27+00:00\"\n}","name":"ShowNode","pid":32748,"thread":"tokio-rt-worker","ts":"2026-08-24T16:07:03.353905Z"}}
+{"data":{"completed_at":"2026-08-24T16:07:03.375080Z","elapsed":2.494490385055542,"success":true},"info":{"category":"","code":"Q039","extra":{},"invocation_id":"01a03486-700a-7692-a714-776ec5ce2cca","level":"info","msg":"\n==================== Execution Summary =====================\nFinished 'license' successfully [2.5s]","name":"CommandCompleted","pid":32748,"thread":"tokio-rt-worker","ts":"2026-08-24T16:07:03.375184Z"}}
+{"data":{"log_version":3,"version":"=2.0.0-preview.205"},"info":{"category":"","code":"A001","extra":{},"invocation_id":"01a04912-a593-7260-925c-a5da51cb92dc","level":"info","msg":"Running with dbt-fusion=2.0.0-preview.205","name":"MainReportVersion","pid":44164,"thread":"tokio-rt-worker","ts":"2026-08-28T15:52:33.951052Z"}}
+{"data":{"args":{"debug":"false","invocation_command":"C:\\Users\\dungr\\.local\\bin\\dbt.exe license info --json --log-format json","log_format":"json","quiet":"false","write_json":"true"}},"info":{"category":"","code":"A002","extra":{},"invocation_id":"01a04912-a593-7260-925c-a5da51cb92dc","level":"debug","msg":"running dbt-fusion with arguments {\"command\":\"license\",\"vars\":\"{}\",\"limit\":\"10\",\"debug\":false,\"log_format\":\"json\",\"quiet\":false,\"write_json\":true,\"write_catalog\":false,\"manage_state\":false}","name":"MainReportArgs","pid":44164,"thread":"tokio-rt-worker","ts":"2026-08-28T15:52:33.951080Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a04912-a593-7260-925c-a5da51cb92dc","level":"debug","msg":"No platform credentials found, skipping remote license","name":"Generic","pid":44164,"thread":"tokio-rt-worker","ts":"2026-08-28T15:52:33.961303Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a04912-a593-7260-925c-a5da51cb92dc","level":"debug","msg":"License from file C:\\Users\\dungr\\.dbt\\license.trial is in refresh window, attempting remote refresh","name":"Generic","pid":44164,"thread":"tokio-rt-worker","ts":"2026-08-28T15:52:34.766368Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a04912-a593-7260-925c-a5da51cb92dc","level":"debug","msg":"Requesting trial license from https://cloud.getdbt.com/api/private/trial-licenses/","name":"Generic","pid":44164,"thread":"main","ts":"2026-08-28T15:52:35.256095Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a04912-a593-7260-925c-a5da51cb92dc","level":"debug","msg":"Trial license retrieved","name":"Generic","pid":44164,"thread":"main","ts":"2026-08-28T15:52:35.529370Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a04912-a593-7260-925c-a5da51cb92dc","level":"debug","msg":"License loaded from trial license server","name":"Generic","pid":44164,"thread":"tokio-rt-worker","ts":"2026-08-28T15:52:36.011891Z"}}
+{"data":{"columns":[],"is_inline":true,"node_name":"license_info","output_format":"json","preview":"{\n  \"status\": \"valid\",\n  \"licensing_enabled\": true,\n  \"features\": [\n    \"compare\",\n    \"strict-static-analysis\"\n  ],\n  \"issued_at\": \"2026-08-28T15:52:35+00:00\",\n  \"expires_at\": \"2026-09-03T19:39:27+00:00\",\n  \"license_type\": \"trial\",\n  \"machine_id\": \"0f2466455d31a0d9f0d56e27390081f2195fd8e0984785b0f51ddffcd1f399ca\",\n  \"days_remaining\": 6,\n  \"trial_start_date\": \"2026-08-20T19:39:27+00:00\"\n}","unique_id":"license.info"},"info":{"category":"","code":"Q041","extra":{},"invocation_id":"01a04912-a593-7260-925c-a5da51cb92dc","level":"info","msg":"{\n  \"status\": \"valid\",\n  \"licensing_enabled\": true,\n  \"features\": [\n    \"compare\",\n    \"strict-static-analysis\"\n  ],\n  \"issued_at\": \"2026-08-28T15:52:35+00:00\",\n  \"expires_at\": \"2026-09-03T19:39:27+00:00\",\n  \"license_type\": \"trial\",\n  \"machine_id\": \"0f2466455d31a0d9f0d56e27390081f2195fd8e0984785b0f51ddffcd1f399ca\",\n  \"days_remaining\": 6,\n  \"trial_start_date\": \"2026-08-20T19:39:27+00:00\"\n}","name":"ShowNode","pid":44164,"thread":"tokio-rt-worker","ts":"2026-08-28T15:52:36.503006Z"}}
+{"data":{"completed_at":"2026-08-28T15:52:36.524965Z","elapsed":2.5740585327148438,"success":true},"info":{"category":"","code":"Q039","extra":{},"invocation_id":"01a04912-a593-7260-925c-a5da51cb92dc","level":"info","msg":"\n==================== Execution Summary =====================\nFinished 'license' successfully [2.6s]","name":"CommandCompleted","pid":44164,"thread":"tokio-rt-worker","ts":"2026-08-28T15:52:36.525172Z"}}
+{"data":{"log_version":3,"version":"=2.0.0-preview.212"},"info":{"category":"","code":"A001","extra":{},"invocation_id":"01a05311-5714-7911-8ea0-9b7381cb9ed9","level":"info","msg":"Running with dbt-fusion=2.0.0-preview.212","name":"MainReportVersion","pid":36932,"thread":"tokio-rt-worker","ts":"2026-08-30T14:27:20.475398Z"}}
+{"data":{"args":{"debug":"false","invocation_command":"C:\\Users\\dungr\\.local\\bin\\dbt.exe license info --json --log-format json","log_format":"json","quiet":"false","write_json":"true"}},"info":{"category":"","code":"A002","extra":{},"invocation_id":"01a05311-5714-7911-8ea0-9b7381cb9ed9","level":"debug","msg":"running dbt-fusion with arguments {\"command\":\"license\",\"vars\":\"{}\",\"limit\":\"10\",\"debug\":false,\"log_format\":\"json\",\"quiet\":false,\"write_json\":true,\"write_catalog\":false,\"manage_state\":false}","name":"MainReportArgs","pid":36932,"thread":"tokio-rt-worker","ts":"2026-08-30T14:27:20.475419Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a05311-5714-7911-8ea0-9b7381cb9ed9","level":"debug","msg":"No platform credentials found, skipping remote license","name":"Generic","pid":36932,"thread":"tokio-rt-worker","ts":"2026-08-30T14:27:20.485992Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a05311-5714-7911-8ea0-9b7381cb9ed9","level":"debug","msg":"License from file C:\\Users\\dungr\\.dbt\\license.trial is in refresh window, attempting remote refresh","name":"Generic","pid":36932,"thread":"tokio-rt-worker","ts":"2026-08-30T14:27:21.254368Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a05311-5714-7911-8ea0-9b7381cb9ed9","level":"debug","msg":"Requesting trial license from https://cloud.getdbt.com/api/private/trial-licenses/","name":"Generic","pid":36932,"thread":"main","ts":"2026-08-30T14:27:21.727416Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a05311-5714-7911-8ea0-9b7381cb9ed9","level":"debug","msg":"Trial license retrieved","name":"Generic","pid":36932,"thread":"main","ts":"2026-08-30T14:27:22.014024Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"01a05311-5714-7911-8ea0-9b7381cb9ed9","level":"debug","msg":"License loaded from trial license server","name":"Generic","pid":36932,"thread":"tokio-rt-worker","ts":"2026-08-30T14:27:22.480596Z"}}
+{"data":{"columns":[],"is_inline":true,"node_name":"license_info","output_format":"json","preview":"{\n  \"status\": \"valid\",\n  \"licensing_enabled\": true,\n  \"features\": [\n    \"compare\",\n    \"strict-static-analysis\"\n  ],\n  \"issued_at\": \"2026-08-30T14:27:21+00:00\",\n  \"expires_at\": \"2026-09-03T19:39:27+00:00\",\n  \"license_type\": \"trial\",\n  \"machine_id\": \"0f2466455d31a0d9f0d56e27390081f2195fd8e0984785b0f51ddffcd1f399ca\",\n  \"days_remaining\": 4,\n  \"trial_start_date\": \"2026-08-20T19:39:27+00:00\"\n}","unique_id":"license.info"},"info":{"category":"","code":"Q041","extra":{},"invocation_id":"01a05311-5714-7911-8ea0-9b7381cb9ed9","level":"info","msg":"{\n  \"status\": \"valid\",\n  \"licensing_enabled\": true,\n  \"features\": [\n    \"compare\",\n    \"strict-static-analysis\"\n  ],\n  \"issued_at\": \"2026-08-30T14:27:21+00:00\",\n  \"expires_at\": \"2026-09-03T19:39:27+00:00\",\n  \"license_type\": \"trial\",\n  \"machine_id\": \"0f2466455d31a0d9f0d56e27390081f2195fd8e0984785b0f51ddffcd1f399ca\",\n  \"days_remaining\": 4,\n  \"trial_start_date\": \"2026-08-20T19:39:27+00:00\"\n}","name":"ShowNode","pid":36932,"thread":"tokio-rt-worker","ts":"2026-08-30T14:27:22.929278Z"}}
+{"data":{"completed_at":"2026-08-30T14:27:22.944794Z","elapsed":2.469517230987549,"success":true},"info":{"category":"","code":"Q039","extra":{},"invocation_id":"01a05311-5714-7911-8ea0-9b7381cb9ed9","level":"info","msg":"\n==================== Execution Summary =====================\nFinished 'license' successfully [2.5s]","name":"CommandCompleted","pid":36932,"thread":"tokio-rt-worker","ts":"2026-08-30T14:27:22.944909Z"}}

@@ -10,3 +10,7 @@ data/
 # Virtual environments
 .venv
 .env
+
+# dbt generated artifacts
+weather_dbt/target/
+weather_dbt/logs/

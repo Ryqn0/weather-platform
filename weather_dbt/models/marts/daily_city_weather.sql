@@ -13,7 +13,8 @@ select
     max(relative_humidity_2m) as max_relative_humidity_2m,
     avg(wind_speed_10m) as avg_wind_speed_10m,
     min(wind_speed_10m) as min_wind_speed_10m,
-    max(wind_speed_10m) as max_wind_speed_10m
+    max(wind_speed_10m) as max_wind_speed_10m,
+    count(*) as reading_count
 
 from {{ ref('stg_weather_readings') }}
 

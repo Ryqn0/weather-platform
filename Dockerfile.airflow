@@ -5,4 +5,4 @@ COPY --chown=airflow:0 pyproject.toml README.md /opt/weather-platform/
 COPY --chown=airflow:0 src /opt/weather-platform/src/
 
 # Install your pipeline package + its runtime deps into Airflow's environment
-RUN pip install --no-cache-dir /opt/weather-platform
+RUN pip install --no-cache-dir /opt/weather-platform dbt-core dbt-postgres

@@ -9,6 +9,9 @@ import asyncio, time
 import logging
 from dotenv import load_dotenv
 
+from airflow.providers.standard.operators.bash import BashOperator
+
+
 load_dotenv()
 
 # logging.basicConfig(format='%(asctime)s %(levelname)s %(name)s %(message)s')
@@ -57,9 +60,15 @@ def ingest_pipeline():
         """
         load_records(records)
 
+
+    transform = BashOperator(
+        task_id="transform",
+        bash_command="cd /opt/airflow/weather_dbt && dbt deps && dbt run && dbt test",
+    )
+
     # start = time.perf_counter()
 
-    load(fetch())
+    transform.set_upstream(load(fetch()))
 
     #print(f"Time taken to process : {time.perf_counter() - start:.2f}s")
 
