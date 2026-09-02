@@ -4,8 +4,15 @@ import asyncio
 import httpx
 from datetime import datetime, timezone
 import logging
+import os
 
 from weather_platform.validation import is_valid_record
+from weather_platform.storage import save_raw_to_gcs
+from dotenv import load_dotenv
+
+load_dotenv()
+
+BUCKET_NAME = os.getenv("BUCKET_NAME")
 
 logger = logging.getLogger(__name__)
 
@@ -74,6 +81,18 @@ async def fetch_current_weather(client: httpx.AsyncClient, semaphore: asyncio.Se
 
         return {'error_status': str(e)}
 
+
+def build_partitioned_object_path() -> str:
+    """Helper function that create the partitioned object path using UTC timestamp"""
+
+    
+    date = datetime.now(timezone.utc)
+    logger.debug(f"Datetime is %s", date)
+
+    stamp = date.strftime("%Y%m%dT%H%M%SZ")
+    logger.debug(f"Stamp is %s", stamp)
+
+    return f"raw/weather/year={date.year}/month={date.month:02d}/day={date.day:02d}/{stamp}.json"
     
 
 async def fetch_many(cities: list[dict]) -> list[dict]:
@@ -134,6 +153,8 @@ async def fetch_many(cities: list[dict]) -> list[dict]:
             continue
 
         records.append(record)
+
+    save_raw_to_gcs(responses, BUCKET_NAME, build_partitioned_object_path())
 
     logger.debug("Records : %s", records)
 

@@ -4,6 +4,7 @@
 import json
 from pathlib import Path
 import asyncio
+import os
 
 from weather_platform.ingestion import fetch_many
 from weather_platform.db import load_records
@@ -13,6 +14,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+BUCKET_NAME = os.getenv("BUCKET_NAME")
 
 def save_raw(data: dict, path: str) -> None:
     """
@@ -62,7 +64,10 @@ def main():
     jsondict = asyncio.run(fetch_many(dicts_to_test))
     # save_raw(jsondict, "data/testing/weather.json")
 
-    load_records(jsondict)
+    # load_records(jsondict)
+
+    from weather_platform.storage import save_raw_to_gcs
+    save_raw_to_gcs([{"test": "hello"}], "weather-platform-507116-raw-data", "raw/test/hello.json")
 
 
     # connection_test()

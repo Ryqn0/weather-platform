@@ -22,7 +22,7 @@ resource "google_sql_database_instance" "main" {
       ipv4_enabled = true
       authorized_networks {
         name  = "home"
-        value = "82.66.248.188/32"
+        value = "${var.home_ip}/32"
       }
     }
   }
@@ -37,4 +37,43 @@ resource "google_sql_user" "weather_app" {
   name     = "weather_app"
   instance = google_sql_database_instance.main.name
   password = var.db_password
+}
+
+resource "google_storage_bucket" "weather_bucket" {
+  name          = "${var.project_id}-raw-data"
+  location      = "europe-west1"
+  force_destroy = true
+
+  uniform_bucket_level_access = true
+
+  lifecycle_rule {
+    condition {
+      age = 30
+    }
+    action {
+      type          = "SetStorageClass"
+      storage_class = "NEARLINE"
+    }
+  }
+
+  lifecycle_rule {
+    condition {
+      age = 90
+    }
+    action {
+      type          = "SetStorageClass"
+      storage_class = "COLDLINE"
+    }
+  }
+
+  lifecycle_rule {
+    condition {
+      age = 365
+    }
+    action {
+      type = "Delete"
+    }
+  }
+
+
 }
