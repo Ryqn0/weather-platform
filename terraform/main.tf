@@ -5,6 +5,10 @@ provider "google" {
   region  = var.region
 }
 
+provider "local" {
+  # Configuration options
+}
+
 resource "google_sql_database_instance" "main" {
   name                = "main-instance"
   database_version    = "POSTGRES_16"
@@ -68,7 +72,7 @@ resource "google_storage_bucket" "weather_bucket" {
 
   lifecycle_rule {
     condition {
-      age = 365
+      age  = 365
     }
     action {
       type = "Delete"
@@ -76,4 +80,28 @@ resource "google_storage_bucket" "weather_bucket" {
   }
 
 
+}
+
+resource "google_service_account" "service_account" {
+  account_id   = "weather-pipeline"
+  display_name = "weather pipeline"
+}
+
+resource "google_storage_bucket_iam_member" "member" {
+  bucket   = google_storage_bucket.weather_bucket.name
+  role     = "roles/storage.objectCreator"
+  member   = "serviceAccount:${google_service_account.service_account.email}"
+  timeouts {
+    create = "5m"
+  }
+}
+
+resource "google_service_account_key" "mykey" {
+  service_account_id = google_service_account.service_account.name
+}
+
+resource "local_file" "gcp_key" {
+  content         = base64decode(google_service_account_key.mykey.private_key)
+  filename        = "${path.module}/../gcp-key.json"
+  file_permission = "0600"
 }

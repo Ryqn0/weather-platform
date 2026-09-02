@@ -14,3 +14,7 @@ data/
 # dbt generated artifacts
 weather_dbt/target/
 weather_dbt/logs/
+
+# Terraform credentials and logs
+gcp-key.json
+logs/

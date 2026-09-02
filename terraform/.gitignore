@@ -25,3 +25,9 @@ override.tf.json
 # CLI configuration files
 .terraformrc
 terraform.rc
+
+# Credentials
+gcp-key.json
+
+# Logs
+logs/
