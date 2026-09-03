@@ -20,6 +20,19 @@ def get_or_create_location(cur, country: str, city: str, latitude: float, longit
 
     logger.debug("Getting info on creating or getting the location_id from the database...")
 
+    cur.execute(
+        "SELECT location_id FROM locations WHERE country = %s AND city = %s",
+        [country, city],
+    )
+
+    row = cur.fetchone()
+
+    if row:
+
+        logger.debug("Found existing location_id: %s", row[0])
+
+        return row[0]
+
     cur.execute("""
             INSERT INTO locations (country, city, latitude, longitude)
             VALUES (%s, %s, %s, %s)

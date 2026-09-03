@@ -5,6 +5,7 @@ from datetime import datetime
 
 from weather_platform.ingestion import fetch_many
 from weather_platform.db import load_records
+from weather_platform.streaming import publish_records
 import asyncio, time
 import logging
 from dotenv import load_dotenv
@@ -53,12 +54,20 @@ def ingest_pipeline():
         return asyncio.run(fetch_many(cities))
     
 
-    @task()
-    def load(records: list[dict]):
+    # @task()
+    # def load(records: list[dict]):
+    #     """
+    #     Load the data into datasets
+    #     """
+    #     load_records(records)
+
+
+    @task
+    def publish(records: list[dict]):
         """
-        Load the data into datasets
+        Publish the records
         """
-        load_records(records)
+        publish_records(records, "weather-readings")
 
 
     transform = BashOperator(
@@ -68,7 +77,11 @@ def ingest_pipeline():
 
     # start = time.perf_counter()
 
-    transform.set_upstream(load(fetch()))
+    records = fetch()
+
+    # transform.set_upstream(load(records))
+
+    transform.set_upstream(publish(records))
 
     #print(f"Time taken to process : {time.perf_counter() - start:.2f}s")
 

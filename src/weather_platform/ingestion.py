@@ -154,7 +154,7 @@ async def fetch_many(cities: list[dict]) -> list[dict]:
 
         records.append(record)
 
-    save_raw_to_gcs(responses, BUCKET_NAME, build_partitioned_object_path())
+    # save_raw_to_gcs(responses, BUCKET_NAME, build_partitioned_object_path())
 
     logger.debug("Records : %s", records)
 
