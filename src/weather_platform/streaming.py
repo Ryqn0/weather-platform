@@ -3,6 +3,7 @@
 import os
 from confluent_kafka import Producer, Consumer
 from weather_platform.db import load_records
+from prometheus_client import start_http_server, Counter, Gauge
 from dotenv import load_dotenv
 import logging
 import json
@@ -46,6 +47,8 @@ def consume_records(topic: str = "weather-readings", group_id: str = "weather-lo
                          "auto.offset.reset": "earliest",
                         })
 
+    TEMPERATURE = Gauge('current_temperature', 'Gauge for the current temperature', ['city'])
+
     try:
 
         logger.info("Consuming records...")
@@ -53,6 +56,8 @@ def consume_records(topic: str = "weather-readings", group_id: str = "weather-lo
         consumer.subscribe([topic])
 
         running = True
+
+        start_http_server(8000)
 
         while running:
 
@@ -73,6 +78,8 @@ def consume_records(topic: str = "weather-readings", group_id: str = "weather-lo
                     logger.debug("Loading record : %s into the database", record)
 
                     load_records([record])
+
+                    TEMPERATURE.labels(city=record['city']).set(record["temperature_2m"])
 
                     logger.debug("Loaded record!")
 
@@ -100,6 +107,8 @@ def consume_alerts(topic: str = "weather-readings", group_id: str = "weather-ale
     THRESHOLD_1 = -10
     THRESHOLD_2 = 35
 
+    ALERTS = Counter('total_alerts_fired', 'Total Alerts Fired')
+
     try:
 
         logger.info("Consuming alerts...")
@@ -107,6 +116,8 @@ def consume_alerts(topic: str = "weather-readings", group_id: str = "weather-ale
         consumer.subscribe([topic])
 
         running = True
+
+        start_http_server(8000)
 
         while running:
 
@@ -132,9 +143,13 @@ def consume_alerts(topic: str = "weather-readings", group_id: str = "weather-ale
 
                         logger.warning("Extreme cold in %s: %s°C (threshold %s)", city, temp, THRESHOLD_1)
 
+                        ALERTS.inc()
+
                     elif temp > THRESHOLD_2:
 
                         logger.warning("Extreme heat in %s: %s°C (threshold %s)", city, temp, THRESHOLD_2)
+
+                        ALERTS.inc()
 
                     else:
 

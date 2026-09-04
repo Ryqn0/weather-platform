@@ -71,6 +71,7 @@ services:
       timeout: 5s
       retries: 5
   
+
   app:
     build: .
     depends_on:
@@ -80,6 +81,7 @@ services:
       - .env
     environment:
       - DB_HOST=db
+
 
   postgres:
     image: postgres:16
@@ -95,6 +97,7 @@ services:
       retries: 5
       start_period: 5s
     restart: always
+
 
   redis:
     # Redis is limited to 7.2-bookworm due to licencing change
@@ -127,10 +130,12 @@ services:
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
       KAFKA_NUM_PARTITIONS: 3
   
+
   consumer:
     build: .
     command: ["uv", "run", "consumer_main.py"]
     env_file: [.env]
+    ports: ["8001:8000"]
     environment:
       - DB_HOST=db
     depends_on:
@@ -140,10 +145,12 @@ services:
         condition: service_started
     restart: unless-stopped
 
+
   alerts:
     build: .
     command: ["uv", "run", "alerts_main.py"]
     env_file: [.env]
+    ports: ["8000:8000"]
     environment:
       - DB_HOST=db
     depends_on:
@@ -152,6 +159,42 @@ services:
       kafka:
         condition: service_started
     restart: unless-stopped
+
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    ports:
+      - "8090:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
+    depends_on:
+      - kafka
+
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    depends_on:
+      - consumer
+      - alerts
+
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - grafana-data:/var/lib/grafana
+    depends_on:
+      - prometheus
+
 
   airflow-apiserver:
     <<: *airflow-common
@@ -371,3 +414,4 @@ services:
 volumes:
   db-data:
   postgres-db-volume:
+  grafana-data:
