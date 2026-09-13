@@ -66,8 +66,8 @@ def main():
 
     # load_records(jsondict)
 
-    from weather_platform.storage import save_raw_to_gcs
-    save_raw_to_gcs([{"test": "hello"}], "weather-platform-507116-raw-data", "raw/test/hello.json")
+    # from weather_platform.storage import save_raw_to_gcs
+    # save_raw_to_gcs([{"test": "hello"}], "weather-platform-507116-raw-data", "raw/test/hello.json")
 
 
     # connection_test()

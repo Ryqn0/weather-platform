@@ -18,3 +18,6 @@ weather_dbt/logs/
 # Terraform credentials and logs
 gcp-key.json
 logs/
+
+# Kubernetes
+k8s/config.yaml

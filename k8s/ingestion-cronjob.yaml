@@ -1,0 +1,22 @@
+# k8s/ingestion-cronjob.yaml
+
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: weather-ingestion
+spec:
+  schedule: "*/15 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: pipeline
+              image: weather-platform-app:latest
+              imagePullPolicy: IfNotPresent
+              envFrom:
+                - configMapRef:
+                    name: weather-config
+                - secretRef:
+                    name: weather-secret
