@@ -21,3 +21,4 @@ logs/
 
 # Kubernetes
 k8s/config.yaml
+kubectl
